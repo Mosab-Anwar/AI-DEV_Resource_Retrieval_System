@@ -1,0 +1,202 @@
+[
+  {
+    "query": "deep learning python",
+    "relevant_ids": [
+      "gh_239",
+      "gh_347",
+      "gh_1771",
+      "gh_130",
+      "gh_1541"
+    ]
+  },
+  {
+    "query": "machine learning tutorial",
+    "relevant_ids": [
+      "gh_1029",
+      "gh_1627",
+      "gh_2090",
+      "gh_1066",
+      "gh_647"
+    ]
+  },
+  {
+    "query": "neural network",
+    "relevant_ids": [
+      "gh_1760",
+      "gh_1851",
+      "gh_1696",
+      "gh_178",
+      "gh_822"
+    ]
+  },
+  {
+    "query": "natural language processing",
+    "relevant_ids": [
+      "gh_1954",
+      "gh_1394",
+      "gh_2337",
+      "gh_1865",
+      "gh_319"
+    ]
+  },
+  {
+    "query": "computer vision",
+    "relevant_ids": [
+      "gh_2456",
+      "gh_1063",
+      "gh_2483",
+      "gh_1260",
+      "gh_2337"
+    ]
+  },
+  {
+    "query": "reinforcement learning",
+    "relevant_ids": [
+      "gh_1539",
+      "gh_1125",
+      "gh_1531",
+      "gh_1541",
+      "gh_1337"
+    ]
+  },
+  {
+    "query": "transformer model",
+    "relevant_ids": [
+      "gh_1021",
+      "gh_35",
+      "gh_2",
+      "gh_671",
+      "gh_1555"
+    ]
+  },
+  {
+    "query": "image classification",
+    "relevant_ids": [
+      "gh_180",
+      "gh_1855",
+      "gh_1068",
+      "gh_2619",
+      "gh_1771"
+    ]
+  },
+  {
+    "query": "object detection",
+    "relevant_ids": [
+      "gh_1091",
+      "gh_1646",
+      "gh_1061",
+      "gh_2619",
+      "gh_547"
+    ]
+  },
+  {
+    "query": "text classification",
+    "relevant_ids": [
+      "gh_1521",
+      "gh_1237",
+      "gh_2528",
+      "gh_180",
+      "gh_2495"
+    ]
+  },
+  {
+    "query": "generative adversarial network",
+    "relevant_ids": [
+      "gh_342",
+      "gh_126",
+      "gh_439",
+      "gh_830",
+      "gh_1007"
+    ]
+  },
+  {
+    "query": "transfer learning",
+    "relevant_ids": [
+      "gh_2534",
+      "gh_1558",
+      "gh_1442",
+      "gh_1119",
+      "gh_1882"
+    ]
+  },
+  {
+    "query": "bert nlp",
+    "relevant_ids": [
+      "gh_4",
+      "gh_30",
+      "gh_971",
+      "gh_1205",
+      "gh_270"
+    ]
+  },
+  {
+    "query": "convolutional neural network",
+    "relevant_ids": [
+      "gh_1760",
+      "gh_1851",
+      "gh_213",
+      "gh_2618",
+      "gh_178"
+    ]
+  },
+  {
+    "query": "data augmentation",
+    "relevant_ids": [
+      "gh_144",
+      "gh_2204",
+      "gh_41",
+      "gh_1605",
+      "gh_1448"
+    ]
+  },
+  {
+    "query": "gradient descent optimization",
+    "relevant_ids": [
+      "gh_428",
+      "gh_2374",
+      "gh_278",
+      "gh_1423",
+      "gh_656"
+    ]
+  },
+  {
+    "query": "recurrent neural network",
+    "relevant_ids": [
+      "gh_1760",
+      "gh_1851",
+      "gh_822",
+      "gh_1696",
+      "gh_178"
+    ]
+  },
+  {
+    "query": "attention mechanism",
+    "relevant_ids": [
+      "gh_1407",
+      "gh_1783",
+      "gh_2911",
+      "ax_2996",
+      "ax_3182"
+    ]
+  },
+  {
+    "query": "autonomous driving",
+    "relevant_ids": [
+      "gh_467",
+      "gh_1668",
+      "ax_3222",
+      "gh_1774",
+      "gh_2649"
+    ]
+  },
+  {
+    "query": "speech recognition",
+    "relevant_ids": [
+      "gh_1265",
+      "gh_607",
+      "gh_2913",
+      "gh_2341",
+      "gh_1334"
+    ]
+  }
+]

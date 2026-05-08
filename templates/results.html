@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Results</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  min-height: 100vh;
+  background: #0f172a;
+  font-family: 'Segoe UI', sans-serif;
+  color: #e2e8f0;
+}
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 36px 20px 60px;
+}
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  gap: 16px;
+}
+.topbar h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #f1f5f9;
+}
+.topbar p { color: #94a3b8; font-size: 13px; margin-top: 4px; }
+.new-search {
+  text-decoration: none;
+  background: #6366f1;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.new-search:hover { background: #4f46e5; }
+.metrics-box {
+  display: flex;
+  gap: 16px;
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 14px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.metric {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  min-width: 80px;
+}
+.metric-label {
+  font-size: 11px;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin-bottom: 4px;
+}
+.metric-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: #6366f1;
+}
+.not-evaluated {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 14px;
+  padding: 12px 20px;
+  margin-bottom: 24px;
+  color: #64748b;
+  font-size: 13px;
+}
+.card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin-bottom: 14px;
+}
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.badge-github { background: #134e4a; color: #5eead4; }
+.badge-arxiv  { background: #312e81; color: #a5b4fc; }
+.card h2 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+.snippet {
+  font-size: 13px;
+  color: #94a3b8;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+mark {
+  background: transparent;
+  color: #fbbf24;
+  font-weight: 700;
+  text-decoration: underline;
+}
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 12px;
+  border-top: 1px solid #334155;
+}
+.score {
+  font-size: 11px;
+  color: #64748b;
+  font-family: monospace;
+}
+.score span {
+  color: #6366f1;
+  font-weight: 700;
+}
+.link {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6366f1;
+  text-decoration: none;
+  border: 1px solid #6366f1;
+  padding: 5px 12px;
+  border-radius: 8px;
+}
+.link:hover { background: #6366f1; color: white; }
+.empty {
+  text-align: center;
+  padding: 40px;
+  color: #64748b;
+  background: #1e293b;
+  border-radius: 16px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="topbar">
+    <div>
+      <h1>Results for "{{ query }}"</h1>
+      <p>{{ results|length }} result(s) found</p>
+    </div>
+    <a class="new-search" href="/">New Search</a>
+  </div>
+
+  {% if metrics %}
+  <div class="metrics-box">
+    <div class="metric">
+      <span class="metric-label">Precision</span>
+      <span class="metric-value">{{ metrics.precision }}</span>
+    </div>
+    <div class="metric">
+      <span class="metric-label">Recall</span>
+      <span class="metric-value">{{ metrics.recall }}</span>
+    </div>
+    <div class="metric">
+      <span class="metric-label">F1 Score</span>
+      <span class="metric-value">{{ metrics.f1 }}</span>
+    </div>
+  </div>
+  {% else %}
+  <div class="not-evaluated">This query is not in the evaluation set.</div>
+  {% endif %}
+{% if results %}
+  {% for r in results %}
+  <div class="card">
+    <div class="card-top">
+      {% if r.source == "github" %}
+      <span class="badge badge-github">GitHub</span>
+      {% else %}
+      <span class="badge badge-arxiv">arXiv</span>
+      {% endif %}
+    </div>
+    <h2>{{ r.title }}</h2>
+    {% if r.snippet and r.snippet|string|trim %}
+    <p class="snippet">{{ r.snippet | safe }}</p>
+    {% else %}
+    <p class="snippet" style="color:#475569;font-style:italic;">No preview available.</p>
+    {% endif %}
+    <div class="card-footer">
+      <span class="score">TF-IDF Score: <span>{{ "%.4f"|format(r.score) }}</span></span>
+      {% if r.url %}
+      <a class="link" href="{{ r.url }}" target="_blank">Open Source</a>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+{% else %}
+<div class="empty">No results found for your query.</div>
+{% endif %}
+</div>
+</body>
+</html>
