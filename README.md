@@ -6,25 +6,6 @@ Built from scratch using **Python**, with a local corpus, inverted index, TF-IDF
 
 ---
 
-## 📋 Table of Contents
-
-- [Overview](#overview)
-- [Problem Statement](#problem-statement)
-- [Features](#features)
-- [System Architecture](#system-architecture)
-- [Data Collection](#data-collection)
-- [Preprocessing Pipeline](#preprocessing-pipeline)
-- [Indexing & Retrieval](#indexing--retrieval)
-- [Evaluation](#evaluation)
-- [Getting Started](#getting-started)
-- [Project Structure](#project-structure)
-- [Tech Stack](#tech-stack)
-- [Limitations & Future Work](#limitations--future-work)
-- [Team Members](#team-members)
-- [References](#references)
-
----
-
 ## 📌 Overview
 
 This project allows users to search a locally stored collection of AI/ML documents and retrieve the most relevant results with highlighted snippets and direct source links.
